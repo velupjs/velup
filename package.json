@@ -1,0 +1,60 @@
+{
+  "name": "velup",
+  "version": "0.0.0",
+  "description": "CLI tool to install and configure code quality dependencies for projects",
+  "bin": {
+    "velup": "./bin/index.js"
+  },
+  "types": "/bin/types/index.d.ts",
+  "config": {
+    "commitizen": {
+      "path": "@commitlint/cz-commitlint"
+    }
+  },
+  "lint-staged": {
+    "**/*.{js,jsx,ts,tsx}": "eslint --cache --fix",
+    "**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write --ignore-unknown"
+  },
+  "scripts": {
+    "dev": "ts-node ./src/index.ts",
+    "build": "tsc ./src/index.ts",
+    "prepare": "husky install"
+  },
+  "keywords": [],
+  "author": "Marcos Mellado <marcos@mellados.com>",
+  "license": "ISC",
+  "devDependencies": {
+    "@commitlint/cli": "^17.6.6",
+    "@commitlint/config-conventional": "^17.6.6",
+    "@commitlint/prompt": "^17.6.6",
+    "@semantic-release/changelog": "^6.0.3",
+    "@semantic-release/commit-analyzer": "^10.0.1",
+    "@semantic-release/git": "^10.0.1",
+    "@semantic-release/release-notes-generator": "^11.0.4",
+    "@types/lodash.isequal": "^4.5.6",
+    "@types/lodash.merge": "^4.6.7",
+    "@types/lodash.mergewith": "^4.6.7",
+    "@types/lodash.unionwith": "^4.6.7",
+    "@types/node": "^20.4.2",
+    "@typescript-eslint/eslint-plugin": "^6.0.0",
+    "@typescript-eslint/parser": "^6.0.0",
+    "commitizen": "^4.3.0",
+    "eslint": "^8.44.0",
+    "eslint-config-prettier": "^8.8.0",
+    "eslint-import-resolver-typescript": "^3.5.5",
+    "eslint-plugin-import": "^2.27.5",
+    "eslint-plugin-security": "^1.7.1",
+    "eslint-plugin-sonarjs": "^0.19.0",
+    "husky": "^8.0.0",
+    "lint-staged": "^13.2.3",
+    "prettier": "^3.0.0",
+    "semantic-release": "^21.0.7",
+    "ts-node": "^10.9.1"
+  },
+  "dependencies": {
+    "handlebars": "^4.7.7",
+    "lodash.isequal": "^4.5.0",
+    "lodash.mergewith": "^4.6.2",
+    "lodash.unionwith": "^4.6.0"
+  }
+}
