@@ -1,6 +1,7 @@
 import path from "path";
 import { VelupCategory } from "../../types";
 import base from "./base/plugin.config";
+import ts from "./ts/plugin.config";
 
 const eslint: VelupCategory = {
   id: "eslint",
@@ -11,7 +12,7 @@ const eslint: VelupCategory = {
       outFile: ".eslintrc.js",
     },
   ],
-  plugins: [base],
+  plugins: [base, ts],
 };
 
 export default eslint;
