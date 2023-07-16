@@ -1,7 +1,7 @@
-import { deepMerge } from "../../../utils";
 import { VelupCategoryPlugin } from "../../../types";
 import base from "../base/plugin.config";
 import config from "./v8/config";
+import { mergePlugins } from "../../../lib";
 
 const react: VelupCategoryPlugin = {
   id: "react",
@@ -16,4 +16,4 @@ const react: VelupCategoryPlugin = {
   },
 };
 
-export default deepMerge(base, react) as VelupCategoryPlugin;
+export default mergePlugins(base, react);

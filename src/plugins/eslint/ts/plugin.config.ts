@@ -1,5 +1,5 @@
+import { mergePlugins } from "../../../lib";
 import { VelupCategoryPlugin } from "../../../types";
-import { deepMerge } from "../../../utils";
 import base from "../base/plugin.config";
 import config from "./v8/config";
 
@@ -15,4 +15,4 @@ const ts: VelupCategoryPlugin = {
   },
 };
 
-export default deepMerge(base, ts) as VelupCategoryPlugin;
+export default mergePlugins(base, ts);
