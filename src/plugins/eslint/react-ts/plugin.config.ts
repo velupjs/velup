@@ -1,7 +1,7 @@
-import { mergePlugins } from "../../../lib";
 import { VelupCategoryPlugin } from "../../../types";
 import ts from "../ts/plugin.config";
 import config from "./v8/config";
+import { mergeCategoryPlugins } from "../../../utils";
 
 const react: VelupCategoryPlugin = {
   id: "react-ts",
@@ -11,4 +11,4 @@ const react: VelupCategoryPlugin = {
   },
 };
 
-export default mergePlugins(ts, react);
+export default mergeCategoryPlugins(ts, react);

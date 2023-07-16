@@ -1,19 +1,14 @@
 import { VelupCategoryPlugin } from "../../../types";
 import base from "../base/plugin.config";
 import config from "./v8/config";
-import { mergePlugins } from "../../../lib";
+import { mergeCategoryPlugins } from "../../../utils";
 
 const react: VelupCategoryPlugin = {
   id: "react",
-  devDependencies: [
-    ...(base.devDependencies || []),
-    "eslint-plugin-react",
-    "eslint-plugin-react-hooks",
-    "eslint-plugin-jsx-a11y",
-  ],
+  devDependencies: ["eslint-plugin-react", "eslint-plugin-react-hooks", "eslint-plugin-jsx-a11y"],
   fileData: {
     config,
   },
 };
 
-export default mergePlugins(base, react);
+export default mergeCategoryPlugins(base, react);

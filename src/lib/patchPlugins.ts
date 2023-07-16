@@ -1,10 +1,7 @@
 import { VelupPlugin } from "../types";
-import mergePlugins from "./mergePlugins";
+import { mergePlugins } from "../utils";
 
-const getSelectedPluginListPatched = (
-  pluginIds: string[],
-  pluginList: VelupPlugin[]
-): VelupPlugin[] => {
+const patchPlugins = (pluginIds: string[], pluginList: VelupPlugin[]): VelupPlugin[] => {
   // Consolidate all selected module configs
   const selectedPluginList: VelupPlugin[] = pluginIds.map((pluginId: string) => {
     return pluginList.find((plugin) => plugin.id === pluginId) as VelupPlugin;
@@ -30,4 +27,4 @@ const getSelectedPluginListPatched = (
   return selectedPluginList;
 };
 
-export default getSelectedPluginListPatched;
+export default patchPlugins;

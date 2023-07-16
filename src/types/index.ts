@@ -95,11 +95,6 @@ export type VelupCategoryPlugin = Omit<VelupPlugin, "files"> & {
 };
 
 /**
- *  A list of Velup plugins keyed by plugin id
+ *  A list of Velup plugins and categories
  */
-export type VelupPluginList = {
-  /**
-   * The list of plugins keyed by id
-   */
-  [key: string]: VelupPlugin | VelupCategory;
-};
+export type VelupPluginList = Array<VelupPlugin | VelupCategory>;

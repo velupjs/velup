@@ -2,8 +2,8 @@ import isEqual from "lodash.isequal";
 import unionWith from "lodash.unionwith";
 
 // eslint-disable-next-line @typescript-eslint/no-explicit-any
-const deepMergeArray = (objValue: any[], srcValue: any[]) => {
-  return unionWith(objValue, srcValue, isEqual);
+const deepMergeArray = (arr1: any[], arr2: any[]) => {
+  return unionWith(arr1, arr2, isEqual);
 };
 
 export default deepMergeArray;

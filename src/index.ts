@@ -1,18 +1,19 @@
 #!/usr/bin/env node
 
 import {
-  getAllPluginDependencies,
   getAvailablePlugins,
+  patchPlugins,
+  getPluginDependencies,
   getCompiledTemplates,
-  getSelectedPluginListPatched,
 } from "./lib";
 
-const availablePlugins = getAvailablePlugins();
+import presetPlugins from "./plugins";
 
 const run = () => {
-  const selectedPlugins = ["eslint:react", "prettier"];
-  const selectedPluginList = getSelectedPluginListPatched(selectedPlugins, availablePlugins);
-  const dependencies = getAllPluginDependencies(selectedPluginList);
+  const availablePlugins = getAvailablePlugins(presetPlugins);
+  const selectedPlugins = ["eslint:ts", "prettier"];
+  const selectedPluginList = patchPlugins(selectedPlugins, availablePlugins);
+  const dependencies = getPluginDependencies(selectedPluginList);
   const files = getCompiledTemplates(selectedPluginList);
   console.log(dependencies, files);
 };

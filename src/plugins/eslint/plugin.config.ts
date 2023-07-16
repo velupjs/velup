@@ -2,8 +2,6 @@ import path from "path";
 import { VelupCategory } from "../../types";
 import base from "./base/plugin.config";
 import ts from "./ts/plugin.config";
-import react from "./react/plugin.config";
-import reactTs from "./react-ts/plugin.config";
 
 const eslint: VelupCategory = {
   id: "eslint",
@@ -14,7 +12,7 @@ const eslint: VelupCategory = {
       outFile: ".eslintrc.js",
     },
   ],
-  plugins: [base, ts, react, reactTs],
+  plugins: [base, ts],
 };
 
 export default eslint;

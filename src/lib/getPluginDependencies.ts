@@ -7,7 +7,7 @@ type DependencyList = {
 
 const deps: DependencyList = { dependencies: [], devDependencies: [] };
 
-const getAllPluginDependencies = (plugins: VelupPlugin[]): DependencyList => {
+const getPluginDependencies = (plugins: VelupPlugin[]): DependencyList => {
   return plugins.reduce((list, plugin) => {
     return {
       dependencies: [...list.dependencies, ...(plugin.dependencies || [])],
@@ -16,4 +16,4 @@ const getAllPluginDependencies = (plugins: VelupPlugin[]): DependencyList => {
   }, deps);
 };
 
-export default getAllPluginDependencies;
+export default getPluginDependencies;
