@@ -1,29 +1,36 @@
 #!/usr/bin/env node
-import clear from "clear";
-import { CliArgs } from "./types";
+
+import { parseCLI, log } from "./utils";
 import {
-  parseCLI,
   getAvailablePlugins,
   patchPlugins,
   getPluginDependencies,
   getCompiledTemplates,
 } from "./lib";
 import presetPlugins from "./plugins";
+import chalk from "chalk";
 
-const run = (cliArgs: CliArgs) => {
-  clear();
-
-  if (cliArgs["--dry-run"]) {
-    console.info("The script is now running in dry-mode. No files will be written or changed");
-  }
-
+const run = () => {
   const availablePlugins = getAvailablePlugins(presetPlugins);
   const selectedPlugins = ["eslint:ts", "prettier"];
   const selectedPluginList = patchPlugins(selectedPlugins, availablePlugins);
-  const dependencies = getPluginDependencies(selectedPluginList);
+  const deps = getPluginDependencies(selectedPluginList);
+  if (deps.dependencies.length) {
+    log.announce(`Installing the following dependencies`);
+    log.dryrun(JSON.stringify(deps.dependencies)).e();
+  }
+  if (deps.devDependencies.length) {
+    log.announce(`Installing the following devDependencies`);
+    log.dryrun(JSON.stringify(deps.devDependencies)).e();
+  }
+
   const files = getCompiledTemplates(selectedPluginList);
-  console.log(dependencies, files);
+  log.announce("Creating the following files").dryrun("");
+  files.forEach((file) => {
+    log.dryrun(chalk.bold(file.outPath)).n();
+    log.dryrun(file.content).e();
+  });
 };
 
-const args = parseCLI();
-run(args);
+parseCLI();
+run();

@@ -16,7 +16,7 @@
     "**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "dev": "ts-node ./src/index.ts",
+    "dev": "cross-env DEBUG_MODE=true ts-node ./src/index.ts",
     "build": "tsc ./src/index.ts",
     "prepare": "husky install"
   },
@@ -42,6 +42,7 @@
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "commitizen": "^4.3.0",
+    "cross-env": "^7.0.3",
     "eslint": "^8.44.0",
     "eslint-config-prettier": "^8.8.0",
     "eslint-import-resolver-typescript": "^3.5.5",
@@ -55,6 +56,7 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "chalk": "^4.1.2",
     "clear": "^0.1.0",
     "docopt": "^0.6.2",
     "figlet": "^1.6.0",
