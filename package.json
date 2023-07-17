@@ -31,6 +31,9 @@
     "@semantic-release/commit-analyzer": "^10.0.1",
     "@semantic-release/git": "^10.0.1",
     "@semantic-release/release-notes-generator": "^11.0.4",
+    "@types/clear": "^0.1.2",
+    "@types/docopt": "^0.6.33",
+    "@types/figlet": "^1.5.6",
     "@types/lodash.isequal": "^4.5.6",
     "@types/lodash.merge": "^4.6.7",
     "@types/lodash.mergewith": "^4.6.7",
@@ -52,6 +55,9 @@
     "ts-node": "^10.9.1"
   },
   "dependencies": {
+    "clear": "^0.1.0",
+    "docopt": "^0.6.2",
+    "figlet": "^1.6.0",
     "handlebars": "^4.7.7",
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.2",

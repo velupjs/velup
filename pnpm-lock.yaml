@@ -5,6 +5,15 @@ settings:
   excludeLinksFromLockfile: false
 
 dependencies:
+  clear:
+    specifier: ^0.1.0
+    version: 0.1.0
+  docopt:
+    specifier: ^0.6.2
+    version: 0.6.2
+  figlet:
+    specifier: ^1.6.0
+    version: 1.6.0
   handlebars:
     specifier: ^4.7.7
     version: 4.7.7
@@ -40,6 +49,15 @@ devDependencies:
   '@semantic-release/release-notes-generator':
     specifier: ^11.0.4
     version: 11.0.4(semantic-release@21.0.7)
+  '@types/clear':
+    specifier: ^0.1.2
+    version: 0.1.2
+  '@types/docopt':
+    specifier: ^0.6.33
+    version: 0.6.33
+  '@types/figlet':
+    specifier: ^1.5.6
+    version: 1.5.6
   '@types/lodash.isequal':
     specifier: ^4.5.6
     version: 4.5.6
@@ -722,6 +740,18 @@ packages:
     resolution: {integrity: sha512-vxhUy4J8lyeyinH7Azl1pdd43GJhZH/tP2weN8TntQblOY+A0XbT8DJk1/oCPuOOyg/Ja757rG0CgHcWC8OfMA==}
     dev: true
 
+  /@types/clear@0.1.2:
+    resolution: {integrity: sha512-h3GHp9BuPgY3X+WKWwJgTIl/h38KkcdU6JG28i1xdrlS8YXVi3V1YrhaZkjuvur97qZo8TMQjVXJorTf87LvfA==}
+    dev: true
+
+  /@types/docopt@0.6.33:
+    resolution: {integrity: sha512-FfbIS7UZwte9X1Vr6ENnwEnBOJSjQ0Cr+z1pGNvR4l+bs4U0i4NQIEeIsCvBcLoWmA5xuK1TXYJyZ9qRdF0jhQ==}
+    dev: true
+
+  /@types/figlet@1.5.6:
+    resolution: {integrity: sha512-AOdn9cKJGXpqfHeif16xeGMwWefB4nsOyxkdRMpc+PEP3nUxzu3psJfIqhjrCNW4Sejt5i6rISWmEwK0sw03mA==}
+    dev: true
+
   /@types/json-schema@7.0.12:
     resolution: {integrity: sha512-Hr5Jfhc9eYOQNPYO5WLDq/n4jqijdHNlDXjuAQkkt+mWdQR+XJToOHrsD4cPaMXpn6KO7y2+wM8AZEs8VpBLVA==}
     dev: true
@@ -1265,6 +1295,10 @@ packages:
       escape-string-regexp: 5.0.0
     dev: true
 
+  /clear@0.1.0:
+    resolution: {integrity: sha512-qMjRnoL+JDPJHeLePZJuao6+8orzHMGP04A8CdwCNsKhRbOnKRjefxONR7bwILT3MHecxKBjHkKL/tkZ8r4Uzw==}
+    dev: false
+
   /cli-cursor@2.1.0:
     resolution: {integrity: sha512-8lgKz8LmCRYZZQDpRyT2m5rKJ08TnU4tR9FFFW2rxpxR1FzWi4PQ/NfyODchAatHaUgnSPVcx/R5w6NuTBzFiw==}
     engines: {node: '>=4'}
@@ -1664,6 +1698,11 @@ packages:
     dependencies:
       path-type: 4.0.0
     dev: true
+
+  /docopt@0.6.2:
+    resolution: {integrity: sha512-NqTbaYeE4gA/wU1hdKFdU+AFahpDOpgGLzHP42k6H6DKExJd0A55KEVWYhL9FEmHmgeLvEU2vuKXDuU+4yToOw==}
+    engines: {node: '>=0.10.0'}
+    dev: false
 
   /doctrine@2.1.0:
     resolution: {integrity: sha512-35mSku4ZXK0vfCuHEDAwt55dg2jNajHZ1odvF+8SSr82EsZY4QmXfuWso8oEd8zRhVObSN18aM0CjSdoBX7zIw==}
@@ -2119,6 +2158,12 @@ packages:
     dependencies:
       reusify: 1.0.4
     dev: true
+
+  /figlet@1.6.0:
+    resolution: {integrity: sha512-31EQGhCEITv6+hi2ORRPyn3bulaV9Fl4xOdR169cBzH/n1UqcxsiSB/noo6SJdD7Kfb1Ljit+IgR1USvF/XbdA==}
+    engines: {node: '>= 0.4.0'}
+    hasBin: true
+    dev: false
 
   /figures@2.0.0:
     resolution: {integrity: sha512-Oa2M9atig69ZkfwiApY8F2Yy+tzMbazyvqv21R0NsSC8floSOC09BbT1ITWAdoMGQvJ/aZnR1KMwdx9tvHnTNA==}

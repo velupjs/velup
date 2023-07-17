@@ -9,7 +9,7 @@
     "declaration": true,
     "declarationMap": true,
     "declarationDir": "./bin/types",
-    "rootDir": "./src/",
+    "rootDir": "./",
     "outDir": "./bin/",
     "types": ["node"],
     "esModuleInterop": true,

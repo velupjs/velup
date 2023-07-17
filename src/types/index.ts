@@ -1,3 +1,22 @@
+export type CliArgs = {
+  /**
+   * Is this a dry run
+   */
+  "--dry-run": boolean;
+  /**
+   * is the help command being displayed and exiting
+   */
+  "--help": boolean;
+  /**
+   * is the version displayed and exiting
+   */
+  "--version": boolean;
+  /**
+   * shorthand for --help
+   */
+  "-h": boolean;
+};
+
 /**
  * A file to be written by a Velup plugin
  */
