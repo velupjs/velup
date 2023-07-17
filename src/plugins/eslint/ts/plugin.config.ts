@@ -5,6 +5,7 @@ import { mergeCategoryPlugins } from "../../../utils";
 
 const ts: VelupCategoryPlugin = {
   id: "ts",
+  label: "Typescript",
   devDependencies: ["@typescript-eslint/eslint-plugin", "@typescript-eslint/parser"],
   fileData: {
     config,

@@ -3,6 +3,7 @@ import config from "./v8/config";
 
 const base: VelupCategoryPlugin = {
   id: "base",
+  label: "Default",
   devDependencies: [
     "eslint",
     "eslint-plugin-security",

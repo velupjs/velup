@@ -4,6 +4,7 @@ import config from "./config";
 
 const prettier: VelupPlugin = {
   id: "prettier",
+  label: "Prettier",
   devDependencies: ["prettier"],
   files: [
     {

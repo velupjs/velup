@@ -77,6 +77,10 @@ export type PluginPatch = Omit<BaseVelupPlugin, "id" | "files"> & {
  */
 export type VelupPlugin = BaseVelupPlugin & {
   /**
+   * The human readable string to be used in the CLI
+   */
+  label: string;
+  /**
    * Updates needed in other plugins if applied together. Each key is the name of the plugin to patch
    */
   patches?: {
@@ -93,6 +97,10 @@ export type VelupCategory = {
    * The id of the category
    */
   id: string;
+  /**
+   * The human readable string to be used in the CLI
+   */
+  label: string;
   /**
    * Files to be created by all plugins in the category
    */

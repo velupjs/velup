@@ -5,6 +5,7 @@ import ts from "./ts/plugin.config";
 
 const eslint: VelupCategory = {
   id: "eslint",
+  label: "ESLint",
   files: [
     {
       id: "eslintrc",

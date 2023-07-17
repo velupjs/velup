@@ -5,6 +5,7 @@ import { mergeCategoryPlugins } from "../../../utils";
 
 const react: VelupCategoryPlugin = {
   id: "react-ts",
+  label: "React (with Typescript)",
   devDependencies: ["eslint-plugin-react", "eslint-plugin-react-hooks", "eslint-plugin-jsx-a11y"],
   fileData: {
     config,
