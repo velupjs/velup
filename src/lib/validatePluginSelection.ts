@@ -1,6 +1,5 @@
 import { VelupPluginList } from "../types";
-import { findFirstDuplicate } from "../utils";
-import getFlatPluginIdArray from "./getFlatPluginIdArray";
+import { findFirstDuplicate, getFlatPluginIdArray } from "../utils";
 
 type PluginSelectionValidation = {
   success: boolean;

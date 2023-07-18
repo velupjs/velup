@@ -1,6 +1,7 @@
 import { checkbox, Separator } from "@inquirer/prompts";
 import chalk from "chalk";
 import validatePluginSelection from "./validatePluginSelection";
+import { isCategory } from "../utils";
 import { VelupPluginList } from "../types";
 
 type PluginTree = {
@@ -27,9 +28,8 @@ type Choices = Array<
 const buildSelectionTree = (pluginList: VelupPluginList): PluginTree => {
   return pluginList.reduce((list, item) => {
     const { id, label } = item;
-    const isCategory = "plugins" in item;
 
-    if (isCategory) {
+    if (isCategory(item)) {
       list[id] = {
         label,
         plugins: item.plugins.map(({ label, ...plugin }) => ({ id: `${id}:${plugin.id}`, label })),
@@ -52,9 +52,9 @@ const buildSelectionTree = (pluginList: VelupPluginList): PluginTree => {
 const buildSelectionChoices = (selection: string[], pluginTree: PluginTree): Choices => {
   return Object.keys(pluginTree).reduce((list, id) => {
     const item = pluginTree[id];
-    const isCategory = "plugins" in item;
+    const isPluginCategory = "plugins" in item;
 
-    if (isCategory) {
+    if (isPluginCategory) {
       list.push(new Separator(chalk.bold(item.label)));
       item.plugins?.map((p, idx) => {
         list.push({

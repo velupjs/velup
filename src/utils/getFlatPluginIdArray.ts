@@ -1,11 +1,10 @@
 import { VelupPluginList } from "../types";
+import isCategory from "./isCategory";
 
 const getFlatPluginIdArray = (list: VelupPluginList): { id: string; label: string }[] => {
   return list.reduce(
     (list, item) => {
-      const isCategory = "plugins" in item;
-
-      if (isCategory) {
+      if (isCategory(item)) {
         item.plugins.forEach(({ id, label }) => {
           list.push({ id: `${item.id}:${id}`, label: `${item.label} - ${label}` });
         });

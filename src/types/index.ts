@@ -2,7 +2,7 @@ export type CliArgs = {
   /**
    * List of predefined plugins to install
    */
-  "--plugins"?: string;
+  "--plugins"?: string[];
   /**
    * Is this a dry run
    */

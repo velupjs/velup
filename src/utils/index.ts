@@ -8,3 +8,5 @@ export { default as Logger, log } from "./Logger";
 export { default as useState, States } from "./useState";
 export { default as findFirstDuplicate } from "./findFirstDuplicate";
 export { default as compileTemplate } from "./compileTemplate";
+export { default as getFlatPluginIdArray } from "./getFlatPluginIdArray";
+export { default as isCategory } from "./isCategory";

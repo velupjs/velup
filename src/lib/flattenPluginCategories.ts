@@ -1,9 +1,5 @@
-import { VelupPlugin, VelupPluginList, VelupCategory } from "../types";
-import { mergeFileList } from "../utils";
-
-const isCategory = (obj: VelupPlugin | VelupCategory): obj is VelupCategory => {
-  return "plugins" in obj;
-};
+import { VelupPlugin, VelupPluginList } from "../types";
+import { mergeFileList, isCategory } from "../utils";
 
 const flattenPluginCategories = (plugins: VelupPluginList): VelupPlugin[] => {
   return plugins.reduce((list, item) => {
@@ -29,11 +25,4 @@ const flattenPluginCategories = (plugins: VelupPluginList): VelupPlugin[] => {
   }, [] as VelupPlugin[]);
 };
 
-const getAvailablePlugins = (
-  plugins: VelupPluginList,
-  external?: VelupPluginList
-): VelupPlugin[] => {
-  return flattenPluginCategories([...plugins, ...(external || [])]);
-};
-
-export default getAvailablePlugins;
+export default flattenPluginCategories;
