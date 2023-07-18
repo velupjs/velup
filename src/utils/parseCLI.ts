@@ -12,12 +12,15 @@ const doc = `${textSync("velup", { font: "Slant" })} @v${version}
 
 Usage:
     velup
-    velup --dry-run | -h | --help | --version
+    velup --plugins=<plugins>...
+    velup --dry-run | -h | --help 
+    velup --version
 
 Options
-    --dry-run   Run the command and log the output without writing any files
-    -h --help   Show this screen
-    --version   Show version
+    --plugins=<plugins>   Comma separated list of plugins to install
+    --dry-run             Run the command and log the output without writing any files
+    -h --help             Show this screen
+    --version             Show version
 `;
 
 const parseCLI = (): CliArgs => {
@@ -25,7 +28,7 @@ const parseCLI = (): CliArgs => {
 
   clear();
 
-  log.info("⚡ velup@v" + version);
+  log.announce("⚡ velup@v" + version);
 
   if (process.env.DEBUG_MODE) {
     const [, setDebugMode] = useState(States.debugMode);
@@ -37,8 +40,10 @@ const parseCLI = (): CliArgs => {
     // Start Dry run
     const [, setDryRun] = useState(States.dryRun);
     setDryRun(true);
-    log.dryrun("The script is now running in dry-mode. No files will be written or changed").n();
+    log.dryrun("The script is now running in dry-mode. No files will be written or changed");
   }
+
+  log.e();
 
   return args;
 };

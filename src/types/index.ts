@@ -1,20 +1,24 @@
 export type CliArgs = {
   /**
+   * List of predefined plugins to install
+   */
+  "--plugins"?: string;
+  /**
    * Is this a dry run
    */
-  "--dry-run": boolean;
+  "--dry-run"?: boolean;
   /**
    * is the help command being displayed and exiting
    */
-  "--help": boolean;
+  "--help"?: boolean;
   /**
    * is the version displayed and exiting
    */
-  "--version": boolean;
+  "--version"?: boolean;
   /**
    * shorthand for --help
    */
-  "-h": boolean;
+  "-h"?: boolean;
 };
 
 /**

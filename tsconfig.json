@@ -4,7 +4,8 @@
   "compilerOptions": {
     "strict": true,
     "target": "ESNext",
-    "module": "commonjs",
+    "module": "CommonJS",
+    "moduleResolution": "Node",
     "lib": ["ESNext"],
     "declaration": true,
     "declarationMap": true,
@@ -17,9 +18,11 @@
     "allowSyntheticDefaultImports": true,
     "allowUnreachableCode": false,
     "allowUnusedLabels": false,
-    "moduleResolution": "node",
     "noImplicitReturns": true,
     "skipLibCheck": true
+  },
+  "ts-node": {
+    "esm": true
   },
   "exclude": ["node_modules", "tmp", "bin"]
 }

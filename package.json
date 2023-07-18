@@ -16,7 +16,7 @@
     "**/*.{js,jsx,ts,tsx,css,scss,md}": "prettier --write --ignore-unknown"
   },
   "scripts": {
-    "dev": "cross-env DEBUG_MODE=true ts-node ./src/index.ts",
+    "dev": "cross-env DEBUG_MODE=true ts-node --files ./src/index.ts",
     "build": "tsc ./src/index.ts",
     "prepare": "husky install"
   },
@@ -34,6 +34,8 @@
     "@types/clear": "^0.1.2",
     "@types/docopt": "^0.6.33",
     "@types/figlet": "^1.5.6",
+    "@types/lodash.find": "^4.6.7",
+    "@types/lodash.indexof": "^4.0.7",
     "@types/lodash.isequal": "^4.5.6",
     "@types/lodash.merge": "^4.6.7",
     "@types/lodash.mergewith": "^4.6.7",
@@ -53,14 +55,18 @@
     "lint-staged": "^13.2.3",
     "prettier": "^3.0.0",
     "semantic-release": "^21.0.7",
-    "ts-node": "^10.9.1"
+    "ts-node": "^10.9.1",
+    "typescript": "^5.1.6"
   },
   "dependencies": {
+    "@inquirer/prompts": "^3.0.0",
     "chalk": "^4.1.2",
     "clear": "^0.1.0",
     "docopt": "^0.6.2",
     "figlet": "^1.6.0",
     "handlebars": "^4.7.7",
+    "lodash.find": "^4.6.0",
+    "lodash.indexof": "^4.0.5",
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.2",
     "lodash.unionwith": "^4.6.0"

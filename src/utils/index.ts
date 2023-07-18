@@ -6,3 +6,4 @@ export { default as mergeCategoryPlugins } from "./mergeCategoryPlugins";
 export { default as mergeFileList } from "./mergeFileList";
 export { default as Logger, log } from "./Logger";
 export { default as useState, States } from "./useState";
+export { default as findFirstDuplicate } from "./findFirstDuplicate";
