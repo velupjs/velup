@@ -15,7 +15,7 @@ const getPluginsToInstall = async (
       log.error(validateArgPlugins.message);
       process.exit(0);
     }
-    console.info("Argument plugins have been validated");
+    log.info("Argument plugins have been validated");
   }
 
   const selectedPlugins = argsPlugins
