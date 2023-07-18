@@ -12,9 +12,8 @@ const doc = `${textSync("velup", { font: "Slant" })} @v${version}
 
 Usage:
     velup
-    velup --plugins=<plugins>...
-    velup --dry-run | -h | --help 
-    velup --version
+    velup [--plugins=<plugins>...] [--dry-run]
+    velup --dry-run | -h | --help | --version
 
 Options
     --plugins=<plugins>   Comma separated list of plugins to install
