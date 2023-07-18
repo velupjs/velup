@@ -1,7 +1,5 @@
-import fs from "fs";
-import Handlebars from "handlebars";
 import { FileTemplate, VelupPlugin } from "../types";
-import registerHelpers from "../helpers/registerHelpers";
+import { compileTemplate } from "../utils";
 
 type FileAndDataList = {
   file: FileTemplate;
@@ -23,13 +21,11 @@ const getCompiledTemplates = (plugins: VelupPlugin[]): FileList => {
   }, [] as FileAndDataList);
 
   // Ensure handlebars helpers are registered for compilation
-  registerHelpers();
   return fileList.map((item) => {
-    const templateContent = fs.readFileSync(item.file.templatePath, { encoding: "utf-8" });
-    const template = Handlebars.compile(templateContent);
+    const content = compileTemplate(item.file.templatePath, item.data);
 
     return {
-      content: template(item.data),
+      content,
       outPath: item.file.outFile,
     };
   });

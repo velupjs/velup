@@ -7,3 +7,4 @@ export { default as mergeFileList } from "./mergeFileList";
 export { default as Logger, log } from "./Logger";
 export { default as useState, States } from "./useState";
 export { default as findFirstDuplicate } from "./findFirstDuplicate";
+export { default as compileTemplate } from "./compileTemplate";
