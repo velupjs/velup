@@ -5,7 +5,7 @@
   "bin": {
     "velup": "./bin/index.js"
   },
-  "types": "/bin/types/index.d.ts",
+  "types": "./bin/types/index.d.ts",
   "config": {
     "commitizen": {
       "path": "@commitlint/cz-commitlint"

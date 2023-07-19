@@ -41,3 +41,18 @@ fs.readdirSync(path.resolve(__dirname, "../"))
   .forEach((file) =>
     fs.copyFileSync(path.resolve(__dirname, "../", file), path.resolve(__dirname, "../dist/", file))
   );
+// Clean package.json
+const keysToRemove = ["config", "lint-staged", "scripts", "devDependencies"];
+const packageJson = path.resolve(__dirname, "../dist/package.json");
+fs.writeFileSync(
+  packageJson,
+  JSON.stringify(
+    Object.fromEntries(
+      Object.entries(JSON.parse(fs.readFileSync(packageJson, "utf-8"))).filter(
+        ([key]) => !keysToRemove.includes(key)
+      )
+    ),
+    null,
+    2
+  )
+);
