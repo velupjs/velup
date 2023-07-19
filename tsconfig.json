@@ -9,9 +9,9 @@
     "lib": ["ESNext"],
     "declaration": true,
     "declarationMap": true,
-    "declarationDir": "./bin/types",
+    "declarationDir": "./dist/types",
     "rootDir": "./",
-    "outDir": "./bin/",
+    "outDir": "./dist/",
     "types": ["node"],
     "esModuleInterop": true,
     "resolveJsonModule": true,
@@ -24,5 +24,6 @@
   "ts-node": {
     "esm": true
   },
+  "include": ["./src/index.ts"],
   "exclude": ["node_modules", "tmp", "bin"]
 }
