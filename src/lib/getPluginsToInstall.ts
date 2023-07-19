@@ -9,7 +9,7 @@ const getPluginsToInstall = async (
   pluginList: VelupPluginList,
   argsPlugins: string[]
 ): Promise<VelupPlugin[]> => {
-  if (argsPlugins) {
+  if (argsPlugins.length) {
     const validateArgPlugins = validatePluginSelection(argsPlugins[0].split(" "), pluginList);
     if (!validateArgPlugins.success) {
       log.error(validateArgPlugins.message);
@@ -18,7 +18,7 @@ const getPluginsToInstall = async (
     log.info("Argument plugins have been validated");
   }
 
-  const selectedPlugins = argsPlugins
+  const selectedPlugins = argsPlugins.length
     ? argsPlugins[0].split(" ")
     : await getUserPluginSelection(pluginList);
   log.info(`You have selected the following plugins: ${selectedPlugins.join(", ")}`).e();
