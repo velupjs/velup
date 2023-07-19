@@ -20,6 +20,7 @@
     "clean": "rimraf dist",
     "post-build": "ts-node ./scripts/post-build.ts",
     "build": "pnpm clean && tsc && pnpm post-build",
+    "link": "pnpm build && npm i -g ./dist",
     "prepare": "husky install"
   },
   "keywords": [],

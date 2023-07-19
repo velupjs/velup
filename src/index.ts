@@ -7,7 +7,7 @@ import { CliArgs } from "./types";
 
 const run = async (args: CliArgs) => {
   const selectedPluginList = await getPluginsToInstall(plugins, args["--plugins"] || []);
-  installDependencies(selectedPluginList);
+  await installDependencies(selectedPluginList);
   writePluginFiles(selectedPluginList);
 };
 

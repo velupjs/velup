@@ -21,7 +21,7 @@ const getPluginsToInstall = async (
   const selectedPlugins = argsPlugins.length
     ? argsPlugins[0].split(" ")
     : await getUserPluginSelection(pluginList);
-  log.info(`You have selected the following plugins: ${selectedPlugins.join(", ")}`).e();
+  log.info(`You have selected the following plugins: ${selectedPlugins.join(", ")}`).n();
 
   const plugins = flattenPluginCategories(pluginList);
   return patchPlugins(selectedPlugins, plugins);

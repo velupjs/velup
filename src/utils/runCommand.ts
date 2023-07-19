@@ -12,7 +12,7 @@ const runCommand = async (command: string, ignoreDryRun = false): Promise<void> 
   const [checkDryRun] = useState(States.dryRun);
   const isDryRun = checkDryRun();
 
-  log.info(`Executing ${chalk.italic(command)}`);
+  log.info("Running command:").info(chalk.blue(command)).n();
 
   return !isDryRun || ignoreDryRun
     ? new Promise((resolve, reject) => {

@@ -11,3 +11,4 @@ export { default as compileTemplate } from "./compileTemplate";
 export { default as getFlatPluginIdArray } from "./getFlatPluginIdArray";
 export { default as isCategory } from "./isCategory";
 export { default as runCommand } from "./runCommand";
+export { default as wait } from "./wait";
