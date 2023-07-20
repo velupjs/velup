@@ -1,12 +1,15 @@
+import path from "path";
 import { FileTemplate, VelupPlugin } from "../types";
 import { compileTemplate } from "../utils";
+
+const processPath = process.cwd();
 
 type FileAndDataList = {
   file: FileTemplate;
   data: unknown;
 }[];
 
-type FileList = {
+export type FileList = {
   content: string;
   outPath: string;
 }[];
@@ -26,7 +29,7 @@ const getCompiledTemplates = (plugins: VelupPlugin[]): FileList => {
 
     return {
       content,
-      outPath: item.file.outFile,
+      outPath: path.resolve(processPath, item.file.outFile),
     };
   });
 };

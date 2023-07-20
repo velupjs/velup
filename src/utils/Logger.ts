@@ -5,6 +5,7 @@ import useState, { States } from "./useState";
 enum LogLevel {
   "announce",
   "info",
+  "success",
   "warn",
   "debug",
   "error",
@@ -16,7 +17,8 @@ class Logger {
   private prefixes: Record<LogLevel, string> = {
     [LogLevel.announce]: chalk.white.bold("📢 [info]"),
     [LogLevel.info]: chalk.white("   [info]"),
-    [LogLevel.warn]: chalk.yellow(" ⚠️ [warn]"),
+    [LogLevel.success]: chalk.white("✅ [info]"),
+    [LogLevel.warn]: chalk.yellow("⚠️  [warn]"),
     [LogLevel.error]: chalk.red("⛔ [error]"),
     [LogLevel.debug]: chalk.blue("🐞[debug]"),
     [LogLevel.verbose]: chalk.gray.bold("[verbose]"),
@@ -52,6 +54,11 @@ class Logger {
 
   announce(...args: any[]): Logger {
     this.setPrefix(LogLevel.announce);
+    return this.log(...args);
+  }
+
+  success(...args: any[]): Logger {
+    this.setPrefix(LogLevel.success);
     return this.log(...args);
   }
 

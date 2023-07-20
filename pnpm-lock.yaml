@@ -38,6 +38,9 @@ dependencies:
   lodash.unionwith:
     specifier: ^4.6.0
     version: 4.6.0
+  progress:
+    specifier: ^2.0.3
+    version: 2.0.3
 
 devDependencies:
   '@commitlint/cli':
@@ -94,6 +97,9 @@ devDependencies:
   '@types/node':
     specifier: ^20.4.2
     version: 20.4.2
+  '@types/progress':
+    specifier: ^2.0.5
+    version: 2.0.5
   '@typescript-eslint/eslint-plugin':
     specifier: ^6.0.0
     version: 6.0.0(@typescript-eslint/parser@6.0.0)(eslint@8.44.0)(typescript@5.1.6)
@@ -998,6 +1004,12 @@ packages:
 
   /@types/normalize-package-data@2.4.1:
     resolution: {integrity: sha512-Gj7cI7z+98M282Tqmp2K5EIsoouUEzbBJhQQzDE3jSIRk6r9gsz0oUokqIUR4u1R3dMHo0pDHM7sNOHyhulypw==}
+    dev: true
+
+  /@types/progress@2.0.5:
+    resolution: {integrity: sha512-ZYYVc/kSMkhH9W/4dNK/sLNra3cnkfT2nJyOAIDY+C2u6w72wa0s1aXAezVtbTsnN8HID1uhXCrLwDE2ZXpplg==}
+    dependencies:
+      '@types/node': 20.4.2
     dev: true
 
   /@types/semver@7.5.0:
@@ -4165,6 +4177,11 @@ packages:
   /process-nextick-args@2.0.1:
     resolution: {integrity: sha512-3ouUOpQhtgrbOa17J7+uxOTpITYWaGP7/AhoR3+A+/1e9skrzelGi/dXzEYyvbxubEF6Wn2ypscTKiKJFFn1ag==}
     dev: true
+
+  /progress@2.0.3:
+    resolution: {integrity: sha512-7PiHtLll5LdnKIMw100I+8xJXR5gW2QwWYkT6iJva0bXitZKa/XMrSbdmg3r2Xnaidz9Qumd0VPaMrZlF9V9sA==}
+    engines: {node: '>=0.4.0'}
+    dev: false
 
   /proto-list@1.2.4:
     resolution: {integrity: sha512-vtK/94akxsTMhe0/cbfpR+syPuszcuwhqVjJq26CuNDgFGj682oRBXOP5MJpv2r7JtE8MsiepGIqvvOTBwn2vA==}

@@ -45,6 +45,7 @@
     "@types/lodash.mergewith": "^4.6.7",
     "@types/lodash.unionwith": "^4.6.7",
     "@types/node": "^20.4.2",
+    "@types/progress": "^2.0.5",
     "@typescript-eslint/eslint-plugin": "^6.0.0",
     "@typescript-eslint/parser": "^6.0.0",
     "commitizen": "^4.3.0",
@@ -75,6 +76,7 @@
     "lodash.indexof": "^4.0.5",
     "lodash.isequal": "^4.5.0",
     "lodash.mergewith": "^4.6.2",
-    "lodash.unionwith": "^4.6.0"
+    "lodash.unionwith": "^4.6.0",
+    "progress": "^2.0.3"
   }
 }
