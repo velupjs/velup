@@ -12,11 +12,12 @@ const doc = `${textSync("velup", { font: "Slant" })} @v${version}
 
 Usage:
     velup
-    velup [--plugins=<plugins>...] [--dry-run]
-    velup --dry-run | -h | --help | --version
+    velup [--plugins=<plugins>...] [--dry-run] [--debug-mode]
+    velup -h | --help | --version
 
 Options
     --plugins=<plugins>   Comma separated list of plugins to install
+    --debug-mode          Run the script logging information useful for debugging
     --dry-run             Run the command and log the output without writing any files
     -h --help             Show this screen
     --version             Show version
@@ -29,7 +30,7 @@ const parseCLI = (): CliArgs => {
 
   log.announce("⚡ velup@v" + version);
 
-  if (process.env.DEBUG_MODE) {
+  if (process.env.DEBUG_MODE || args["--debug-mode"]) {
     const [, setDebugMode] = useState(States.debugMode);
     setDebugMode(true);
     log.debug("Debug mode is on");

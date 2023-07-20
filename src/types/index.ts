@@ -4,6 +4,10 @@ export type CliArgs = {
    */
   "--plugins"?: string[];
   /**
+   * Is the script running in debug mode
+   */
+  "--debug-mode"?: boolean;
+  /**
    * Is this a dry run
    */
   "--dry-run"?: boolean;
