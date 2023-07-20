@@ -107,6 +107,7 @@ const writePluginFiles = async (plugins: VelupPlugin[]) => {
     const filePath = path.resolve(processPath, outPath);
     log.debug("checking for", chalk.blue(filePath));
     if (!isDryRun) {
+      await fs.ensureDir(path.dirname(filePath));
       await fs.writeFile(filePath, content);
     } else {
       log.dryrun(chalk.blue(filePath));
