@@ -8,7 +8,7 @@ import useState, { States } from "./useState";
 
 const doc = `${textSync("velup", { font: "Slant" })} @v${version}
 
-⚡ CLI tool to install and configure code quality dependencies for projects
+⚡ Interactive CLI tool to install and configure code quality dependencies for projects
 
 Usage:
     velup
