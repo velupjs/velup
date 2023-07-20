@@ -38,7 +38,7 @@ const writePluginFiles = async (plugins: VelupPlugin[]) => {
   const isDryRun = checkDryRun();
 
   // Announce list of files to be written
-  log.info().announce("Creating plugin files").info();
+  log.info().announce("Identifying plugin files to create").info();
   await wait();
 
   plugins.forEach(({ id, files }) => {
@@ -92,7 +92,7 @@ const writePluginFiles = async (plugins: VelupPlugin[]) => {
   }
 
   // Create new files
-  log.info().announce("Creating plugin files");
+  log.announce("Creating plugin files").info();
   const bar = new ProgressBar(
     `${chalk.white("⚙️  [info]")} files [:bar] :rate/bps :percent :etas`,
     {

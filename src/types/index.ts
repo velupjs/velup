@@ -67,6 +67,10 @@ type BaseVelupPlugin = {
    * Data to be used by the plugin's file templates
    */
   fileData?: unknown;
+  /**
+   * Updates to be made to package.json. They will be merged with the existing values (not overriden)
+   */
+  packageJsonUpdates?: unknown;
 };
 
 /**
@@ -117,6 +121,11 @@ export type VelupCategory = {
    * The plugins provided by the category
    */
   plugins: VelupCategoryPlugin[];
+  /**
+   * Updates to be made to package.json by all plugins in the category.
+   * They will be merged with the existing values from the installed plugin and package.json
+   */
+  packageJsonUpdates?: unknown;
 };
 
 /**
