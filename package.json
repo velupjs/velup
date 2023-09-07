@@ -18,13 +18,14 @@
   "scripts": {
     "dev": "cross-env DEBUG_MODE=true ts-node --files ./src/index.ts",
     "clean": "rimraf dist",
-    "post-build": "ts-node ./scripts/post-build.ts",
     "build": "pnpm clean && tsc && pnpm post-build",
     "link": "pnpm build && pnpm link ./dist",
-    "prepare": "husky install"
+    "prepare": "husky install",
+    "post-build": "ts-node ./scripts/post-build.ts",
+    "postversion": "cp -r package.json .. && cp -r CHANGELOG.md .."
   },
   "keywords": [],
-  "author": "Marcos Mellado <marcos@mellados.com>",
+  "author": "Marcos Mellado <marcos@mellado.dev>",
   "license": "ISC",
   "devDependencies": {
     "@commitlint/cli": "^17.6.6",

@@ -46,7 +46,8 @@ jobs:
       - name: Build library
         run: pnpm build
 
-      - name: Release
+      - name: Release library
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-        run: cd ./dist && npx semantic-release
+          NPM_TOKEN: ${{ secrets.NPM_TOKEN }}
+        run: npx semantic-release
