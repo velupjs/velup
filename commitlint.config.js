@@ -1,4 +1,4 @@
 module.exports = {
   extends: ["@commitlint/config-conventional"],
-  ignores: [(message) => message.includes("chore(repo): release")],
+  ignores: [(message) => message.includes("chore(release):")],
 };
