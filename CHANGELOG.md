@@ -1,3 +1,9 @@
+# [1.0.0-alpha.3](https://github.com/velupjs/velup/compare/v1.0.0-alpha.2...v1.0.0-alpha.3) (2023-09-07)
+
+### Bug Fixes
+
+- **dependencies:** ensure fs-extra is included in dist ([68e16d3](https://github.com/velupjs/velup/commit/68e16d38783b90521a48b761129cdee309998013))
+
 # [1.0.0-alpha.2](https://github.com/velupjs/velup/compare/v1.0.0-alpha.1...v1.0.0-alpha.2) (2023-09-07)
 
 ### Bug Fixes
