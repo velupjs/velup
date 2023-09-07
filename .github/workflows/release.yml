@@ -43,10 +43,10 @@ jobs:
       - name: Install dependencies
         run: pnpm install
 
-      - name: Install semantic-release extra plugins
-        run: pnpm install --save-dev @semantic-release/changelog @semantic-release/git
+      - name: Build library
+        run: pnpm build
 
       - name: Release
         env:
           GITHUB_TOKEN: ${{ secrets.SEMANTIC_RELEASE_TOKEN }}
-        run: npx semantic-release
+        run: cd ./dist && npx semantic-release
