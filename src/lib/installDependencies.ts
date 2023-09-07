@@ -10,7 +10,7 @@ type Commands = Record<PackageManager, { dependencies: string; devDependencies: 
 const commands: Commands = {
   npm: { dependencies: "npm install --save", devDependencies: "npm install --save-dev" },
   yarn: { dependencies: "yarn add", devDependencies: "yarn add --dev" },
-  pnpm: { dependencies: "pnpm install --save", devDependencies: "pnpm install --save-dev" },
+  pnpm: { dependencies: "pnpm add --save", devDependencies: "pnpm install --save-dev" },
 };
 
 const getPackageManager = async (): Promise<PackageManager> => {
@@ -31,17 +31,30 @@ const getPackageManager = async (): Promise<PackageManager> => {
   }
 };
 
+const getWorkspaceFlag = (pkgManager: PackageManager): string => {
+  switch (pkgManager) {
+    case "npm":
+      return " -w ";
+    case "yarn":
+      return " -W ";
+    case "pnpm":
+      return " -w ";
+    default:
+      return " ";
+  }
+};
+
 const install = async (
   pkgManager: PackageManager,
   type: "dependencies" | "devDependencies",
   dependencies: string[]
 ) => {
   const [isDryRun] = useState(States.dryRun);
-  const ignoreDryRun = pkgManager === "npm"; // pnpm and yarn don't have a --dry-run flag for install
-  const cmd = `${commands[pkgManager][type]} ${
-    pkgManager === "npm" && isDryRun() ? "--dry-run " : ""
-  }`;
-  await runCommand(`${cmd}${dependencies.join(" ")}`, ignoreDryRun);
+  const [isWorkspaceInstall] = useState(States.workspace);
+  const cmd = `${commands[pkgManager][type]}${
+    isWorkspaceInstall() ? getWorkspaceFlag(pkgManager) : " "
+  }${isDryRun() ? "--dry-run " : ""}`;
+  await runCommand(`${cmd}${dependencies.join(" ")}`);
 };
 
 const installDependencies = async (plugins: VelupPlugin[]) => {

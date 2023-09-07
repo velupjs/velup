@@ -12,11 +12,12 @@ const doc = `${textSync("velup", { font: "Slant" })} @v${version}
 
 Usage:
     velup
-    velup [--plugins=<plugins>...] [--dry-run] [--debug-mode]
+    velup [--plugins=<plugins>...] [--dry-run] [--debug-mode] [-w | --workspace]
     velup -h | --help | --version
 
 Options
     --plugins=<plugins>   Comma separated list of plugins to install
+    -w --workspace        Run installation of tools at monorepo workspace level
     --debug-mode          Run the script logging information useful for debugging
     --dry-run             Run the command and log the output without writing any files
     -h --help             Show this screen
@@ -41,6 +42,11 @@ const parseCLI = (): CliArgs => {
     const [, setDryRun] = useState(States.dryRun);
     setDryRun(true);
     log.dryrun("The script is now running in dry-mode. No files will be written or changed");
+  }
+
+  if (args["-w"] || args["--workspace"]) {
+    const [, setWorkspace] = useState(States.workspace);
+    setWorkspace(true);
   }
 
   log.e();

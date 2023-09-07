@@ -1,6 +1,7 @@
 export enum States {
   "dryRun",
   "debugMode",
+  "workspace",
 }
 
 type StateObject = Record<States, boolean>;
@@ -24,6 +25,7 @@ class stateMachine {
 const initialState: StateObject = {
   [States.dryRun]: false,
   [States.debugMode]: false,
+  [States.workspace]: false,
 };
 
 const state = new stateMachine(initialState);
