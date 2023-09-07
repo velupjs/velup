@@ -21,8 +21,7 @@
     "build": "pnpm clean && tsc && pnpm post-build",
     "link": "pnpm build && pnpm link ./dist",
     "prepare": "husky install",
-    "post-build": "ts-node ./scripts/post-build.ts",
-    "postversion": "cp -r package.json .. && cp -r CHANGELOG.md .."
+    "post-build": "ts-node ./scripts/post-build.ts"
   },
   "keywords": [],
   "author": "Marcos Mellado <marcos@mellado.dev>",
